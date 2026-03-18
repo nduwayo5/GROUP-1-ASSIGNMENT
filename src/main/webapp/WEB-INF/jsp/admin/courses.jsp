@@ -1,9 +1,10 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ include file="../layout/header.jsp" %>
 <div class="card">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h2>Manage Courses</h2>
-        <a href="/admin/dashboard" class="btn" style="background:#64748b;">Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+        <h2>🏫 Manage Courses</h2>
+        <a href="/admin/dashboard" class="action-btn" style="padding: 10px 18px;">Back to Dashboard</a>
     </div>
 
     <c:if test="${param.added != null}"><p class="badge badge-success" style="display:inline-block; margin-bottom:15px; padding:8px 12px;">Course created successfully</p></c:if>

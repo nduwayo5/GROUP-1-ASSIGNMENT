@@ -1,9 +1,10 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ include file="../layout/header.jsp" %>
 <div class="card">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
         <h2>👨‍🏫 Teacher Approval Queue</h2>
-        <a href="/admin/dashboard" class="btn" style="background:#64748b;">Back to Dashboard</a>
+        <a href="/admin/dashboard" class="action-btn" style="padding: 10px 18px;">Back to Dashboard</a>
     </div>
 
     <c:if test="${param.approved != null}">

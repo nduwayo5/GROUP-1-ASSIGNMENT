@@ -15,7 +15,7 @@
         <h3 style="margin-top:0;">Add New Course</h3>
         <form action="/admin/courses" method="post" style="display:flex; gap:15px; align-items:flex-end; margin:0;">
             <div style="flex:2;">
-                <label style="font-weight:500; display:block; margin-bottom:5px;">Course Name</label>
+                <label style="font-weight:500; display:block; margin-bottom:5px;">Course Name sir</label>
                 <input type="text" name="name" required placeholder="e.g. Intro to Computer Science" style="margin:0;" />
             </div>
             <div style="flex:1;">

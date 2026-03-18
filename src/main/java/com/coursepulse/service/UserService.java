@@ -46,4 +46,12 @@ public class UserService {
     public List<User> findAllByRole(Role role) {
         return userRepository.findByRole(role);
     }
+
+    public long getCountByRole(Role role) {
+        return userRepository.countByRole(role);
+    }
+
+    public long getPendingTeacherCount() {
+        return userRepository.countByRoleAndApproved(Role.TEACHER, false);
+    }
 }

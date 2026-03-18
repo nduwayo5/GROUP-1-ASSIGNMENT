@@ -59,4 +59,12 @@ public class InitiatorService {
         Survey survey = getSurveyById(surveyId);
         return responseRepository.findBySurvey(survey);
     }
+
+    public List<Survey> getAllSurveys() {
+        return surveyRepository.findAll();
+    }
+
+    public long getTotalSurveysCount() {
+        return surveyRepository.count();
+    }
 }

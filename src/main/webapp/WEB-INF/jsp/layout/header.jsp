@@ -17,7 +17,17 @@
             <a href="/guest/surveys">View Public Surveys</a>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
-            <a href="/dashboard">Dashboard</a>
+            <sec:authorize access="hasAuthority('ADMIN')">
+                <a href="/admin/dashboard" class="nav-link">📊 Dashboard</a>
+                <a href="/admin/courses" class="nav-link">🏫 Manage Courses</a>
+                <a href="/admin/teachers/pending" class="nav-link">👨‍🏫 Teacher Approvals</a>
+                <a href="/admin/courses/assign" class="nav-link">🔗 Assign Teachers</a>
+                <a href="/admin/users" class="nav-link">👥 Manage Users</a>
+                <a href="/admin/surveys" class="nav-link">📋 View All Surveys</a>
+            </sec:authorize>
+            <sec:authorize access="!hasAuthority('ADMIN')">
+                <a href="/dashboard">Dashboard</a>
+            </sec:authorize>
             <form action="/logout" method="post" style="display:inline;">
                 <button type="submit" class="btn btn-danger" style="padding: 6px 12px; margin: 0;">Logout</button>
             </form>

@@ -21,6 +21,10 @@ public class AdminService {
     public List<Course> getAllCourses() {
         return courseRepository.findAll();
     }
+
+    public long getTotalCourses() {
+        return courseRepository.count();
+    }
     
     public void createCourse(Course course) {
         courseRepository.save(course);
@@ -45,5 +49,9 @@ public class AdminService {
         Course course = courseRepository.findById(courseId).orElseThrow();
         teacher.getCourses().remove(course);
         userRepository.save(teacher);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

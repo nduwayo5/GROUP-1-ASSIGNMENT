@@ -25,12 +25,11 @@
         </form>
     </div>
 
-    <h3>Course List & Teacher Assignments</h3>
+    <h3>Registered Courses</h3>
     <table>
         <tr>
             <th>Code</th>
             <th>Name</th>
-            <th>Assign Teacher</th>
             <th>Actions</th>
         </tr>
         <c:forEach var="course" items="${courses}">
@@ -38,21 +37,12 @@
                 <td><strong>${course.code}</strong></td>
                 <td>${course.name}</td>
                 <td>
-                    <form action="/admin/courses/assign" method="post" style="display:flex; gap:10px; margin:0;">
-                        <input type="hidden" name="courseId" value="${course.id}" />
-                        <select name="teacherId" style="margin:0; padding:8px; min-width:180px;" required>
-                            <option value="" disabled selected>-- Select Teacher --</option>
-                            <c:forEach var="t" items="${teachers}">
-                                <option value="${t.id}">${t.fullName}</option>
-                            </c:forEach>
-                        </select>
-                        <button type="submit" class="btn" style="padding:8px 16px;">Assign</button>
-                    </form>
-                </td>
-                <td>
-                    <form action="/admin/courses/delete/${course.id}" method="post" style="margin:0;">
-                        <button type="submit" class="btn btn-danger" style="padding:8px 16px;" onclick="return confirm('Are you sure you want to delete this course?')">Delete</button>
-                    </form>
+                    <div style="display:flex; gap:10px;">
+                        <a href="/admin/courses/assign" class="btn btn-success" style="padding:8px 16px; font-size:0.875rem;">Assign</a>
+                        <form action="/admin/courses/delete/${course.id}" method="post" style="margin:0;">
+                            <button type="submit" class="btn btn-danger" style="padding:8px 16px;" onclick="return confirm('Are you sure you want to delete this course?')">Delete</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         </c:forEach>
